@@ -86,7 +86,7 @@
   
   * En mi caso he eliminado la metadata de la imagen y nombre para que el modelo clasifique según su grado de confianza.
   * Ejecutamos el modelo desde `src/runners/classificator` con `node classificator.js ../img/test04.jpg`
-  * Saliada Esperada...
+  * Salida Esperada...
   
    ``` js
          2022-11-20 20:09:04.459159: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in 
@@ -100,7 +100,7 @@
 
   ```
   
-  * Alta probabilidad para `espresso` (café expreso). Intervalo de Confianza y Clasificación Correctos.
+  * Alta probabilidad para `espresso` (café expreso). Intervalo de Confianza Alto y Clasificación Correcta.
   
   </br>
   
@@ -111,7 +111,7 @@
   
   * En mi caso he eliminado la metadata de la imagen y nombre para que el modelo clasifique según su grado de confianza.
   * Ejecutamos el modelo desde `src/runners/classificator` con `node classificator.js ../img/test05.jpg`
-  * Saliada Esperada...
+  * Salida Esperada...
   
    ``` js
         2022-11-20 20:11:07.652384: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in 
@@ -128,7 +128,7 @@
 
   ```
   
-  * Alta probabilidad para `microwave` (microondas). Podemos Notar que el Modelo no aplica un intervalo de confianza aceptable para varios objetos. El modelo logró predecir que hay un `cofeepot` (cafetera) pero con baja probabilidad. Intervalo de Confianza Bajo y Clasificación Correcta.
+  * Alta probabilidad para `microwave` (microondas). Podemos Notar que el Modelo no aplica un intervalo de confianza aceptable para varios objetos. El modelo logró predecir que hay un `cofeepot` (cafetera) pero con baja probabilidad. Intervalo de Confianza Bajo y Clasificación Correcta. Para este caso se deberá aplicar un ajuste fino de parámetros del modelo.
 
  
   
