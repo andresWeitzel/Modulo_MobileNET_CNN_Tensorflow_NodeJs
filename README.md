@@ -23,3 +23,113 @@
 ### Doc No Oficial
 * [Referencia Base](https://becominghuman.ai/image-classification-machine-learning-in-node-js-with-tensorflow-js-dd8e20ba5024)
 * [Repositorio Base](https://github.com/tejas77/node-image-classification)
+
+</br>
+
+## Modelo de Capa de Lectura y Decodificación de Imagen 
+
+</br>
+
+  ``` js
+   //Imports
+   const tf = require('@tensorflow/tfjs');
+   const tfnode = require('@tensorflow/tfjs-node');
+   const fs = require('fs');
+
+   module.exports.exec = (path) => {
+
+       const imageBuffer = fs.readFileSync(path);
+       const tfimage = tfnode.node.decodeImage(imageBuffer);
+
+       return tfimage;
+   }
+
+  ```
+  
+  </br>
+
+## Modelo de Capa de Clasificación de Imagen 
+
+</br>
+
+  ``` js
+    //Imports
+    const read= require('../fileSystem/read');
+    const mobileNet = require('@tensorflow-models/mobilenet');
+
+
+    const classificator = async(path) =>{
+        try {
+            const img = read.exec(path);
+            const model = await mobileNet.load();
+            const predictions = await model.classify(img);
+            console.log('Classification Results : ', predictions);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    if (process.argv.length !== 3) throw new Error('Incorrect arguments!');
+
+    classificator(process.argv[2]);
+
+  ```
+  
+  ## Ejecución del Modelo MobileNET
+  * Las Imágenes se almacenan en el directorio `src/img`
+  * Seleccionamos alguna imagen para que el modelo la clasifique..
+  
+  ### Primera Clasificación del Modelo
+  ![Index app](https://github.com/andresWeitzel/Modulo_MobileNET_CNN_Tensorflow_NodeJs/blob/master/src/img/test04.jpg)
+  
+  </br>
+  
+  * En mi caso he eliminado la metadata de la imagen y nombre para que el modelo clasifique según su grado de confianza.
+  * Ejecutamos el modelo desde `src/runners/classificator` con `node classificator.js ../img/test04.jpg`
+  * Saliada Esperada...
+  
+   ``` js
+         2022-11-20 20:09:04.459159: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in 
+   performance-critical operations:  AVX2
+   To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+   Classification Results :  [
+     { className: 'espresso', probability: 0.9372739195823669 },        
+     { className: 'cup', probability: 0.02711259014904499 },
+     { className: 'mortar', probability: 0.008303580805659294 }
+   ]
+
+  ```
+  
+  * Alta probabilidad para `espresso` (café expreso). Intervalo de Confianza y Clasificación Correctos.
+  
+  </br>
+  
+  ### Segunda Clasificación del Modelo
+  ![Index app](https://github.com/andresWeitzel/Modulo_MobileNET_CNN_Tensorflow_NodeJs/blob/master/src/img/test05.jpg)
+  
+  </br>
+  
+  * En mi caso he eliminado la metadata de la imagen y nombre para que el modelo clasifique según su grado de confianza.
+  * Ejecutamos el modelo desde `src/runners/classificator` con `node classificator.js ../img/test05.jpg`
+  * Saliada Esperada...
+  
+   ``` js
+        2022-11-20 20:11:07.652384: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in 
+   performance-critical operations:  AVX2
+   To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+   Classification Results :  [
+     {
+       className: 'microwave, microwave oven',
+       probability: 0.3682105839252472
+     },
+     { className: 'coffeepot', probability: 0.08597368746995926 },      
+     { className: 'paper towel', probability: 0.08168061077594757 }     
+   ]
+
+  ```
+  
+  * Alta probabilidad para `microwave` (microondas). Podemos Notar que el Modelo no aplica un intervalo de confianza aceptable para varios objetos. El modelo logró predecir que hay un `cofeepot` (cafetera) pero con baja probabilidad. Intervalo de Confianza Bajo y Clasificación Correcta.
+
+ 
+  
+  
