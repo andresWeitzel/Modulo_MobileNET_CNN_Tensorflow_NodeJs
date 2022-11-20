@@ -5,7 +5,7 @@ const fs = require('fs');
 
 
 
-module.exports.read = (path) => {
+module.exports.exec = (path) => {
   
     const imageBuffer = fs.readFileSync(path);
     const tfimage = tfnode.node.decodeImage(imageBuffer);
