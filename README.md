@@ -19,6 +19,7 @@
 ### Doc Oficial
 * [TensorFlow Core](https://github.com/tensorflow/tfjs#tensorflowjs)
 * [TensorFlow Api NodeJs](https://js.tensorflow.org/api_node/4.0.0/)
+* [MobileNET v1](https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md)
 
 ### Doc No Oficial
 * [Referencia Base](https://becominghuman.ai/image-classification-machine-learning-in-node-js-with-tensorflow-js-dd8e20ba5024)
