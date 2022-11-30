@@ -7,7 +7,7 @@
 ## Ejecución del Proyecto
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/Modulo_MobileNET_CNN_Tensorflow_NodeJs`)
-* Para el uso de tensorflow en w10 es necesario tener instalado el complemento `Desktop development with C++` de `visual studio`. Para instalarlo [seguir estos pasos](https://bobbyhadz.com/blog/npm-err-gyp-err-find-vs-you-need-to-install-the-latest-version)
+* `IMPORTANTE` : Para el uso de tensorflow en w10 es necesario tener instalado el complemento `Desktop development with C++` de `visual studio`. Para instalarlo [seguir estos pasos](https://bobbyhadz.com/blog/npm-err-gyp-err-find-vs-you-need-to-install-the-latest-version)
 * Dentro del directorio instalar todos los plugins implementados
   * `npm install -g npm@latest` (Última version compatible de npm)
   * `npm install -S @tensorflow/tfjs`([TensorFlow.js Core](https://github.com/tensorflow/tfjs#tensorflowjs))
