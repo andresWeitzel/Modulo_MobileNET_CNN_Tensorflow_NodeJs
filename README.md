@@ -18,7 +18,8 @@
   * `npm install -S @tensorflow/tfjs`([TensorFlow.js Core](https://github.com/tensorflow/tfjs#tensorflowjs))
   * `npm install -S @tensorflow/tfjs-node` ([TensorFlow.js Node.js extension](https://www.npmjs.com/package/@tensorflow/tfjs-node))
   * `npm install -S @tensorflow-models/mobilenet` ([MobileNet Model](https://www.npmjs.com/package/@tensorflow-models/mobilenet))
-* Posibles Soluciones a errores de instalación de las librerías
+   
+## Posibles Soluciones de errores para la instalación de las librerías
   * https://github.com/tensorflow/tfjs/issues/6700
   * https://github.com/tensorflow/tfjs/issues/6670
   * https://github.com/nodejs/node-gyp#on-windows
