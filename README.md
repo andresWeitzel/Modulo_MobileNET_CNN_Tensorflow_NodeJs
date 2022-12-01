@@ -4,14 +4,14 @@
 
 * Módulo para la implementación del Modelo MobileNET de Red Neuronal Convolucional para la Clasificación de Imágenes
 
-## Requisitos
+## Requisitos (W10/11)
 * [Microsoft Visual Studio](https://bobbyhadz.com/blog/npm-err-gyp-err-find-vs-you-need-to-install-the-latest-version)
 * [Python](https://www.python.org/downloads/)
 
-## Ejecución del Proyecto
+## Ejecución del Proyecto (W10/11)
 * Crear un entorno de trabajo a través de algún IDE
 * Clonar el Proyecto (`git clone https://github.com/andresWeitzel/Modulo_MobileNET_CNN_Tensorflow_NodeJs`)
-* `IMPORTANTE` : Para el uso de tensorflow en w10 es necesario tener instalado el complemento Desktop development with C++ de visual studio. Para instalarlo [seguir estos pasos](https://bobbyhadz.com/blog/npm-err-gyp-err-find-vs-you-need-to-install-the-latest-version). Además de tener instalado y configurado [Python](https://www.python.org/downloads/)
+* `IMPORTANTE` : Para el uso de tensorflow en w10 es necesario tener instalado el complemento Desktop development with C++ de visual studio. Para instalarlo [seguir estos pasos](https://bobbyhadz.com/blog/npm-err-gyp-err-find-vs-you-need-to-install-the-latest-version). Además de tener instalado [Python](https://www.python.org/downloads/) y configurado su PATH. 
 * Dentro del directorio instalar todos los plugins implementados
   * `npm update` (Actualizamos los repositorios npm)
   * `npm install -g npm@latest` (Última version compatible de npm)
